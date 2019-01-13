@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="js/leaflet/leaflet.css" />
+    <script src="js/leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="js/leaflet-control-geocoder/Control.Geocoder.css" />
+    <script src="js/leaflet-control-geocoder/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="style.css" </head>
+
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h1>GeoCode Compare</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" class="ui-btn ui-icon-home ui-btn-icon-bottom ui-shadow ui-btn-active">Home</a></li>
+                        <li><a href="#map" class="ui-btn ui-icon-grid ui-btn-icon-bottom ui-shadow">Map</a></li>
+                        <li><a href="#WhereAmI" class="ui-btn ui-icon-location ui-btn-icon-bottom ui-shadow">Where Am I</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+            </div>
+            <!-- /header -->
+
+            <div data-role="content">
+                <span id='query'>Search for a place or address and this app will show results from different geocoding service providers and visualize them in the map.
+                    <input value="calle pintor oliet"></input>
+                    <button id='search'>Search</button>
+                </span>
+                <div class='geocode-result ui-bar-b ui-responsive' id='ArcGIS'>ArcGIS</div>
+                <div class='geocode-result ui-bar-b ui-responsive' id='Google'>Google</div>
+                <div class='geocode-result ui-bar-b ui-responsive' id='HERE'>HERE</div>
+                <div class='geocode-result ui-bar-b ui-responsive' id='OSM'>OSM</div>
+            </div>
+            <!-- /content -->
+        </div>
+        <div data-role="page" id="WhereAmI">
+            <div data-role="header">
+                <h1>GeoCode Compare</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" class="ui-btn ui-icon-home ui-btn-icon-bottom ui-shadow">Home</a></li>
+                        <li><a href="#map" class="ui-btn ui-icon-grid ui-btn-icon-bottom ui-shadow">Map</a></li>
+                        <li><a href="#WhereAmI" class="ui-btn ui-icon-location ui-btn-icon-bottom ui-shadow ui-btn-active">Where Am I</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+            </div>
+            <!-- /header -->
+            <div data-role="content">
+                <div class='reverse-geocode-result ui-bar-b ui-responsive' id='ArcGIS'>ArcGIS</div>
+                <div class='reverse-geocode-result ui-bar-b ui-responsive' id='Google'>Google</div>
+                <div class='reverse-geocode-result ui-bar-b ui-responsive' id='HERE'>HERE</div>
+                <div class='reverse-geocode-result ui-bar-b ui-responsive' id='OSM'>OSM</div>
+            </div>
+            <!-- /content -->
+        </div>
+        <div data-role="page" id="map" data-add-back-btn="true">
+            <div data-role="header" data-add-back-btn="true">
+                <h1>GeoCode Compare</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" class="ui-btn ui-icon-home ui-btn-icon-bottom ui-shadow">Home</a></li>
+                        <li><a href="#map" class="ui-btn ui-icon-grid ui-btn-icon-bottom ui-shadow ui-btn-active">Map</a></li>
+                        <li><a href="#WhereAmI" class="ui-btn ui-icon-location ui-btn-icon-bottom ui-shadow">Where Am I</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+            </div>
+            <!-- /header -->
+            <div data-role="content">
+                <div id='map-div'></div>
+            </div>
+            <!-- /content -->
+        </div>
+    </body>
+    <script src="map.js"></script>
+    <script src="app.js"></script>
+
+</html>
